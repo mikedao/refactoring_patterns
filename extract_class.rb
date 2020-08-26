@@ -3,19 +3,29 @@ class Plane
               :engine_3_running, :engine_4_running
 
   def initialize
-    @engine_1_running = false
-    @engine_2_running = false
-    @engine_3_running = false
-    @engine_4_running = false
+    @engine_1 = Engine.new
+    @engine_2 = Engine.new
+    @engine_3 = Engine.new
+    @engine_4 = Engine.new
   end
 
   def start
-    @engine_1_running = true
-    @engine_2_running = true
-    @engine_3_running = true
-    @engine_4_running = true
+    @engine_1.start
+    @engine_2.start
+    @engine_3.start
+    @engine_4.start
   end
 
+end
+
+class Engine
+  def intitialize
+    @running = false
+  end
+
+  def start
+    @running = true
+  end
 end
 
 dusty = Plane.new

@@ -4,6 +4,12 @@ class Plane
   def initialize
     @engines = Array.new(4){ Engine.new }
   end
+
+  def start_all_engines
+    @engines.each do |engine|
+      engine.start
+    end
+  end
 end
 
 class Engine
@@ -17,4 +23,4 @@ class Engine
 end
 
 dusty = Plane.new
-dusty.engines.each{|e| e.start}
+dusty.start_all_engines

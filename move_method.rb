@@ -6,6 +6,10 @@ class Engine
   def propeller_weight
     50
   end
+
+  def total_weight
+    core_weight + propeller_weight
+  end
 end
 
 class Plane
@@ -25,7 +29,7 @@ class Plane
 
   def weight
     body_weight +
-    engine_count * (engine.core_weight + engine.propeller_weight)
+    engine_count * @engine.total_weight
   end
 end
 
